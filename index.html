@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Raphaela Elias - Análise de Dados">
+  <title>Raphaela Elias | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f7f3e9;
+      --olive: #444b32;
+      --wine: #742f43;
+      --gold: #b7a17b;
+      --text: #34352e;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.2;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid #ddd6c8;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      color: var(--olive);
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--wine); }
+
+    .hero {
+      padding: 110px 0;
+      background: var(--olive);
+      color: var(--cream);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 84px);
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    .hero h1 em {
+      color: #d4b7a7;
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 510px;
+      font-size: 17px;
+      color: #e2dfd4;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--gold);
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--wine);
+      border-color: var(--wine);
+      color: white;
+    }
+
+    .btn-outline { color: var(--cream); }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .hero-art {
+      min-height: 350px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 280px;
+      height: 280px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .circle:nth-child(2) {
+      transform: translate(35px, -35px);
+      border-color: #b88c91;
+    }
+
+    .data-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      height: 160px;
+      z-index: 1;
+    }
+
+    .data-bars span {
+      display: block;
+      width: 30px;
+      background: #c9b18d;
+    }
+
+    .data-bars span:nth-child(1) { height: 40%; }
+    .data-bars span:nth-child(2) { height: 70%; }
+    .data-bars span:nth-child(3) { height: 55%; }
+    .data-bars span:nth-child(4) { height: 100%; background: #a96a78; }
+    .data-bars span:nth-child(5) { height: 80%; }
+
+    section { padding: 95px 0; }
+
+    .section-label {
+      color: var(--wine);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 48px);
+      color: var(--olive);
+      margin: 14px 0 24px;
+    }
+
+    .intro {
+      max-width: 760px;
+      font-size: 17px;
+    }
+
+    .skills {
+      background: #ede8dc;
+    }
+
+    .skill-list {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .skill {
+      padding: 12px 22px;
+      border: 1px solid #c8bfaa;
+      background: var(--cream);
+      color: var(--olive);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #e6dfd3;
+      overflow: hidden;
+    }
+
+    .project-visual {
+      height: 180px;
+      background: var(--olive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e8d5b6;
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+    }
+
+    .project-card:nth-child(2) .project-visual {
+      background: var(--wine);
+    }
+
+    .project-card:nth-child(3) .project-visual {
+      background: #8a8069;
+    }
+
+    .project-content { padding: 25px; }
+
+    .project-content h3 {
+      font-size: 24px;
+      margin: 8px 0 12px;
+      color: var(--olive);
+    }
+
+    .project-content p { font-size: 14px; }
+
+    .project-tag {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--wine);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--wine);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .reports { background: #ede8dc; }
+
+    .report-box {
+      border-left: 4px solid var(--wine);
+      background: var(--cream);
+      padding: 30px;
+      margin-top: 30px;
+    }
+
+    .report-box h3 {
+      color: var(--olive);
+      font-size: 26px;
+      margin-top: 0;
+    }
+
+    .contact {
+      background: var(--olive);
+      color: var(--cream);
+    }
+
+    .contact .section-title { color: var(--cream); }
+
+    .contact p { max-width: 620px; }
+
+    .contact-links {
+      display: flex;
+      gap: 24px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: #e5c7b0;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      font-size: 12px;
+      background: #303625;
+      color: #e4dfd2;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0; }
+      .hero-art { min-height: 260px; }
+      .circle { width: 220px; height: 220px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      nav { flex-direction: column; padding: 18px 0; }
+      .nav-links { justify-content: center; gap: 15px; }
+      section { padding: 65px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">RE.</a>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#relatorios">Relatórios</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portfólio | Análise de Dados</div>
+          <h1>Raphaela<br><em>Elias.</em></h1>
+          <p>
+            Transformando dados em informações claras,
+            análises relevantes e insights que apoiam decisões.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projetos">Explorar projetos</a>
+            <a class="btn btn-outline" href="#sobre">Conheça meu perfil</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="data-bars">
+            <span></span><span></span><span></span>
+            <span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-label">01 / Sobre mim</div>
+        <h2 class="section-title">Dados, análise e propósito.</h2>
+        <p class="intro">
+          Sou Raphaela Elias, estudante de ensino superior
+          com interesse em tecnologia e análise de dados.
+          Meu objetivo é desenvolver soluções analíticas
+          que transformem informações em conhecimento útil
+          para empresas e organizações.
+        </p>
+        <p class="intro">
+          Neste portfólio, apresento minha evolução técnica,
+          projetos práticos, visualizações e relatórios analíticos.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills" id="habilidades">
+      <div class="container">
+        <div class="section-label">02 / Conhecimentos</div>
+        <h2 class="section-title">Ferramentas & tecnologias.</h2>
+        <p>Competências técnicas em desenvolvimento.</p>
+        <div class="skill-list">
+          <div class="skill">SQL</div>
+          <div class="skill">Python</div>
+          <div class="skill">Pandas</div>
+          <div class="skill">Excel</div>
+          <div class="skill">Power BI</div>
+          <div class="skill">Git & GitHub</div>
+          <div class="skill">Visualização de Dados</div>
+          <div class="skill">Análise Exploratória</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-label">03 / Portfólio</div>
+        <h2 class="section-title">Projetos selecionados.</h2>
+        <p>Espaço reservado para estudos de caso e projetos de análise de dados.</p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-visual">01</div>
+            <div class="project-content">
+              <span class="project-tag">Análise de negócios</span>
+              <h3>Análise de Vendas</h3>
+              <p>Indicadores de desempenho, evolução de receita e identificação de oportunidades.</p>
+              <span class="coming-soon">Projeto em preparação</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">02</div>
+            <div class="project-content">
+              <span class="project-tag">Análise de clientes</span>
+              <h3>Comportamento do Cliente</h3>
+              <p>Segmentação, padrões de consumo e análise de indicadores de clientes.</p>
+              <span class="coming-soon">Projeto em preparação</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">03</div>
+            <div class="project-content">
+              <span class="project-tag">Business Intelligence</span>
+              <h3>Dashboard de Indicadores</h3>
+              <p>Visualização de métricas para acompanhar resultados e apoiar decisões.</p>
+              <span class="coming-soon">Projeto em preparação</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reports" id="relatorios">
+      <div class="container">
+        <div class="section-label">04 / Documentação</div>
+        <h2 class="section-title">Relatórios & insights.</h2>
+        <p class="intro">
+          Além de dashboards, uma boa análise precisa comunicar
+          resultados, explicar descobertas e apresentar recomendações.
+        </p>
+
+        <div class="report-box">
+          <h3>Relatórios analíticos</h3>
+          <p>
+            Em breve, esta seção reunirá relatórios com
+            resumo executivo, indicadores, gráficos,
+            interpretação dos resultados e recomendações.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="section-label">05 / Contato</div>
+        <h2 class="section-title">Vamos nos conectar?</h2>
+        <p>
+          Estou construindo minha trajetória profissional
+          na área de dados e aberta a conexões,
+          aprendizado e oportunidades.
+        </p>
+        <div class="contact-links">
+          <a href="https://github.com/raphaelaelias-dev"
+             target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Raphaela Elias. Portfólio de Análise de Dados.
+  </footer>
+
+</body>
+</html>
